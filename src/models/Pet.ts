@@ -140,7 +140,7 @@ export const Pet = {
 		return data.filter((item) => item.type === type);
 	},
 
-	getFomName: (name: string): PetInfo[] => {
+	getFromName: (name: string): PetInfo[] => {
 		return data.filter(
 			(item) => item.name.toLowerCase().indexOf(name.toLowerCase()) > -1
 		);

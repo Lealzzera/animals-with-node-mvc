@@ -1,4 +1,4 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import dotenv from "dotenv";
 import mustache from "mustache-express";
 import path from "path";
@@ -16,9 +16,8 @@ server.use(express.static(path.join(__dirname, "../public")));
 
 //ROUTES
 server.use(mainRoutes);
-
-server.use((req, res) => {
-	res.send("404 - Page not found");
+server.use((req: Request, res: Response) => {
+	res.render("pages/404");
 });
 
 server.listen(process.env.PORT);
